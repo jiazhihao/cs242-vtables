@@ -36,7 +36,7 @@ Meta.setParents("Point", []);
 Meta.setDataOffset("Point::x", 1);
 Meta.setDataOffset("Point::y", 2);
 Meta.setSizeof("Point", 3);
-Meta.setGlobal("Point", impl_Point_Point);
+Meta.setGlobal("Point", "Point", impl_Point_Point);
 Meta.setVirtualOffsets("Point", {"move": 0});
 var vtable = [ Layout.VEntry(impl_Point_move, "Point", 0) ];
 Meta.setTemplate("Point", [Layout.Layout(0, "Point", vtable)]);
@@ -45,7 +45,7 @@ Meta.setCasts("ScaledPoint", {"Point": 0});
 Meta.setParents("ScaledPoint", ["Point"]);
 Meta.setDataOffset("ScaledPoint::s", 3);
 Meta.setSizeof("ScaledPoint", 4);
-Meta.setGlobal("ScaledPoint", impl_ScaledPoint_ScaledPoint);
+Meta.setGlobal("ScaledPoint", "ScaledPoint", impl_ScaledPoint_ScaledPoint);
 Meta.setVirtualOffsets("ScaledPoint", {"move": 0, "scale": 1});
 var vtable = [
     Layout.VEntry(impl_ScaledPoint_move, "ScaledPoint", 0),

@@ -53,7 +53,7 @@ Meta.setCasts("C", {"A": 0, "B": 2});
 Meta.setParents("C", ["A", "B"]);
 Meta.setDataOffset("C::z", 4);
 Meta.setSizeof("C", 5);
-Meta.setGlobal("C", impl_C_C);
+Meta.setGlobal("C", "C", impl_C_C);
 Meta.setVirtualOffsets("C", {"f": 0});
 var vtable_as_a = [
     Layout.VEntry(impl_C_f, "C", 0),

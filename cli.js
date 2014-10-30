@@ -1,5 +1,7 @@
 #!/usr/bin/env nodejs
 
+var util = require("util");
+
 function usage() {
   var s = "\
 Usage: \n\
@@ -21,4 +23,14 @@ compile();
 
 // Meta.dump();
 
-main();
+if (util.isArray(main)) {
+    main.forEach(function (f) {
+        try {
+            f();
+        } catch (e) {
+            console.log(e.stack);
+        }
+    });
+} else {
+    main();
+}

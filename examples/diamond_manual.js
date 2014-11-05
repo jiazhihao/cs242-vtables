@@ -7,6 +7,24 @@ var Layout = require('../lib/layout')
 // calls in total.
 // {{{
 // ANSWER HERE
+Meta.setCasts("A", {});
+Meta.setParents("A", []);
+Meta.setDataOffset("A::x", 1);
+Meta.setSizeof("A", 2);
+
+Meta.setCasts("B", {"A": 0});
+Meta.setParents("B", ["A"]);
+Meta.setDataOffset("B::y", 2);
+Meta.setSizeof("B", 3);
+
+Meta.setCasts("C", {"A": 0});
+Meta.setParents("C", ["A"]);
+Meta.setDataOffset("C::z", 2);
+Meta.setSizeof("C", 3);
+
+Meta.setCasts("D", {"B": 0, "C": 3});
+Meta.setParents("D", ["B", "C"]);
+Meta.setSizeof("D", 6);
 // }}}
 
 Meta.setGlobal("A", "A", impl_A_A);
